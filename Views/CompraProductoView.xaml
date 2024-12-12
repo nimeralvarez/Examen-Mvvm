@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Mvvm.Views.CompraProductoView"
+             
+             xmlns:viewModel="clr-namespace:Examen_Mvvm.ViewModels"
+             x:DataType="viewModel:CompraProductoViewModel"
+             
+             Title="Comprar Productos">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="5">
+            <Label Text="Costo del producto 1 en Lps.:" />
+            <Entry Text="{Binding Producto1}" Keyboard="Numeric"/>
+
+            <Label Text="Costo del producto 2 en Lps.:" />
+            <Entry Text="{Binding Producto2}" Keyboard="Numeric"/>
+
+            <Label Text="Costo del producto 3 en Lps.:" />
+            <Entry Text="{Binding Producto3}" Keyboard="Numeric"/>
+
+            <Label Text="Subtotal:" />
+            <Entry Text="{Binding Subtotal}" IsReadOnly="True"/>
+
+            <Label Text="Descuento:" />
+            <Entry Text="{Binding Descuento}" IsReadOnly="True"/>
+
+            <Label Text="El total a pagar es:" />
+            <Entry Text="{Binding TotalPagar}" IsReadOnly="True"/>
+
+            <Button Text="Calcular" Command="{Binding CalcularCommand}" BackgroundColor="Blue" />
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" BackgroundColor="BlueViolet"/>
+            
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>
